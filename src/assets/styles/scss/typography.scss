@@ -1,0 +1,33 @@
+.app {
+  @each $key, $values in $fonts {
+    &-#{$key} {
+      @each $key, $value in $values {
+        #{$key}: $value;
+      }
+    }
+  }
+
+  &-text {
+    @each $key, $size in $font-sizes {
+      &-#{$key} {
+        font-size: $size;
+      }
+    }
+
+    @each $key, $weight in $font-weights {
+      &-#{$key} {
+          font-weight: $weight;
+        }
+    }
+
+    &-trans {
+      @each $dec in $textTransforms {
+        &-#{$dec} {
+          text-transform: $dec;
+        }
+      }
+    }
+
+
+  }
+}

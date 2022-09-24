@@ -1,0 +1,17 @@
+@import './variables.scss';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-family: 'Exo 2', sans-serif;
+  color: map-get($map: $colours, $key: 'black-4');
+}
+
+@import './spacings.scss';
+@import './typography.scss';
+@import './colours.scss';
+@import './borders.scss';
+@import './layout.scss';
+@import './links.scss';

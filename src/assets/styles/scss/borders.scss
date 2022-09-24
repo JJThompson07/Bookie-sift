@@ -1,0 +1,13 @@
+.app {
+  @each $size in $borderRadius {
+    &-br-#{$size} {
+      border-radius: #{$size}px;
+    }
+  }
+
+  @each $key, $size in $borderWeights {
+    &-border-#{$key} {
+      border: solid $size;
+    }
+  }
+}

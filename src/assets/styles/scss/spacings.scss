@@ -1,0 +1,98 @@
+.app {
+  @each $key, $size in $spacings {
+    // padding
+    &-p {
+      // all
+      &-#{$key} {
+        padding: $size;
+      }
+      
+      // horizontal
+      &x-#{$key} {
+        padding-left: $size;
+        padding-right: $size;
+      }
+
+      // vertical
+      &y-#{$key} {
+        padding-top: $size;
+        padding-bottom: $size;
+      }
+
+      // left
+      &l-#{$key} {
+        padding-left: $size;
+      }
+
+      // right
+      &r-#{$key} {
+        padding-right: $size;
+      }
+
+      // top
+      &t-#{$key} {
+        padding-top: $size;
+      }
+
+      // bottom
+      &b-#{$key} {
+        padding-bottom: $size;
+      }
+    }
+
+    // margin
+    &-m {
+      // all
+      &-#{$key} {
+        margin: $size;
+      }
+      
+      // horizontal
+      &x-#{$key} {
+        margin-left: $size;
+        margin-right: $size;
+      }
+
+      // vertical
+      &y-#{$key} {
+        margin-top: $size;
+        margin-bottom: $size;
+      }
+
+      // left
+      &l-#{$key} {
+        margin-left: $size;
+      }
+
+      // right
+      &r-#{$key} {
+        margin-right: $size;
+      }
+
+      // top
+      &t-#{$key} {
+        margin-top: $size;
+      }
+
+      // bottom
+      &b-#{$key} {
+        margin-bottom: $size;
+      }
+    }
+  }
+
+  // widths
+  @each $key, $size in $widths {
+    &-w-#{$key} {
+      width: $size
+    }
+  }
+
+  // heights
+  @each $key,
+    $size in $heights {
+      &-w-#{$key} {
+        width: $size
+      }
+  }
+}

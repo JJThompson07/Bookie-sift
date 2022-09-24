@@ -1,18 +1,29 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <div class="home"></div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+<script setup>
+import { onMounted } from "vue";
+import axios from "axios";
 
-export default {
-  name: "Home",
-  components: {
-    HelloWorld,
+const eloApi = axios.create({
+  baseURL: "https://api.coindesk.com/v1/bpi/",
+  headers: {
+    "Content-Type": "application/json",
+    // "Access-Control-Allow-Origin": "http://api.clubelo.com",
   },
-};
+});
+
+onMounted(() => {
+  eloApi
+    .get("currentprice.json")
+    .then((result) => {
+      console.log(result.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
 </script>
+
+<style lang="scss" scoped></style>

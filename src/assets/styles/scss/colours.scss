@@ -1,0 +1,36 @@
+.app {
+  @each $key, $colour  in $colours {
+    // background
+    &-bg-#{$key} {
+      background-color: $colour;
+    }
+    &-bg-light-#{$key} {
+      background-color: scale-color($colour, $lightness: 50%) !important;
+    }
+    &-bg-dark-#{$key} {
+      background-color: scale-color($colour, $lightness: -50%) !important;
+    }
+
+    // border
+    &-border-#{$key} {
+      border-color: $colour;
+    }
+    &-border-light-#{$key} {
+      border-color: scale-color($colour, $lightness: 50%) !important;
+    }
+    &-border-dark-#{$key} {
+      border-color: scale-color($colour, $lightness: -50%) !important;
+    }
+
+    // text
+    &-text-#{$key} {
+      color: $colour;
+    }
+    &-text-light-#{$key} {
+      color: scale-color($colour, $lightness: 50%) !important;
+    }
+    &-text-dark-#{$key} {
+      color: scale-color($colour, $lightness: -50%) !important;
+    }
+  }
+}
